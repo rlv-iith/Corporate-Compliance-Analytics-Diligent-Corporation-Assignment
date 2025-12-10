@@ -27,7 +27,33 @@ This project was built iteratively using a series of logical prompts to the AI a
 
 **Prompt given to Cursor IDE:**
 ```prompt
-Generate five interconnected synthetic datasets in CSV format for a corporate expense compliance system. Please ensure some expenses intentionally violate the compliance rules... (departments.csv, employees.csv, merchants.csv, expenses.csv, compliance_rules.csv)
+"Generate five interconnected synthetic datasets in CSV format for a corporate expense compliance system. Please ensure some expenses intentionally violate the compliance rules.
+departments.csv:
+department_id (unique integer)
+department_name ('Sales', 'Engineering', 'HR', 'Marketing')
+cost_center_code (e.g., 'SLS-101', 'ENG-202')
+employees.csv:
+employee_id (unique integer)
+full_name (string)
+department_id (foreign key to departments.csv)
+job_title (e.g., 'Sales Director', 'Software Engineer')
+merchants.csv:
+merchant_id (unique integer)
+merchant_name ('Uber', 'AWS', 'Starbucks', 'Oracle', 'Fancy Steakhouse')
+merchant_risk_level ('Low', 'Medium', 'High') - Assign 'High' to vendors like 'Fancy Steakhouse'.
+expenses.csv:
+expense_id (unique integer)
+employee_id (foreign key to employees.csv)
+merchant_id (foreign key to merchants.csv)
+submission_date (YYYY-MM-DD format)
+category ('Travel', 'Software', 'Meals', 'Training')
+amount (numeric, 2 decimal places)
+compliance_rules.csv:
+rule_id (unique integer)
+category (matching categories in expenses.csv)
+max_amount (numeric spending limit)
+description ('Limit for client meals', 'Limit for software subscriptions')
+Generate at least 150 rows for expenses.csv, 30 for employees.csv, 4 for departments.csv, 15 for merchants.csv, and one rule for each category in compliance_rules.csv."
 ```
 
 **Outcome:** The AI successfully generated five distinct but related CSV files, providing a solid foundation for the project.
@@ -43,11 +69,11 @@ Generate five interconnected synthetic datasets in CSV format for a corporate ex
 
 **Prompt given to Cursor IDE:**
 ```prompt
-Write a Python script named ingest_data.py. The script must:
-1.  Import pandas and sqlite3.
-2.  Read the five CSV files into pandas DataFrames.
-3.  Establish a connection to a new SQLite database named compliance_data.db.
-4.  Write each DataFrame to a new table.
+Write a Python script named ingest_data.py. The script must perform the following actions:
+1.  Import the pandas and sqlite3 libraries.
+2.  Read the five CSV files (departments.csv, employees.csv, merchants.csv, expenses.csv, and compliance_rules.csv) into five separate pandas DataFrames.
+3.  Establish a connection to a new SQLite database file named compliance_data.db.
+4.  Write each DataFrame to a corresponding table in the database. The table names should be departments, employees, merchants, expenses, and compliance_rules.
 ```
 
 **Outcome:** The AI generated `ingest_data.py`. Executing this script created the `compliance_data.db` file, fully populated with the project's data.
@@ -63,7 +89,21 @@ Write a Python script named ingest_data.py. The script must:
 
 **Prompt given to Cursor IDE:**
 ```prompt
-Write a sophisticated SQL query to run against the compliance_data.db database that identifies high-risk and non-compliant employee expenses. The query must join all five tables and filter for transactions where the amount > max_amount OR the merchant_risk_level is 'High'. Provide the Python script to execute this query and print the results as a formatted table.
+Write a sophisticated SQL query to run against the compliance_data.db database that identifies high-risk and non-compliant employee expenses.
+
+The query must perform the following joins:
+1.  Join `expenses` with `employees` to get the employee's name.
+2.  Join `employees` with `departments` to get the department name.
+3.  Join `expenses` with `merchants` to get the merchant's name and risk level.
+4.  Join `expenses` with `compliance_rules` to get the spending limits.
+
+The query should **filter** for transactions that meet **either** of these two conditions:
+*   The expense `amount` is greater than the `max_amount` for its category.
+*   The `merchant_risk_level` is 'High'.
+
+The final output should display the `full_name`, `department_name`, `submission_date`, `merchant_name`, `merchant_risk_level`, `amount`, and the rule's `max_amount` for comparison. Order the results by the submission date.
+
+Also, provide the full Python script using the `sqlite3` and `pandas` libraries to execute this query and print the results as a clean, formatted table.
 ```
 
 **Outcome:** The AI generated the `analyze_expenses.py` script. Running this script produced the final compliance report, successfully identifying all policy violations and high-risk expenditures.
