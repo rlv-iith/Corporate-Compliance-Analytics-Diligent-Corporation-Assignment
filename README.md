@@ -78,6 +78,8 @@ Write a Python script named ingest_data.py. The script must perform the followin
 
 **Outcome:** The AI generated `ingest_data.py`. Executing this script created the `compliance_data.db` file, fully populated with the project's data.
 *This stage was committed with `feat: Create script to ingest CSV data into SQLite DB`.*
+<img width="1919" height="1171" alt="final-output" src="https://github.com/user-attachments/assets/8123dbc8-411f-411e-ab9b-e148b980dafd" />
+
 
 ---
 
