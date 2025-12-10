@@ -58,7 +58,8 @@ Generate at least 150 rows for expenses.csv, 30 for employees.csv, 4 for departm
 
 **Outcome:** The AI successfully generated five distinct but related CSV files, providing a solid foundation for the project.
 *This stage was committed with `feat: Add synthetic corporate compliance data (5 CSVs)`.*
-![Ingestion Script Prompt & Generated Code](screenshots/prompt-ingestion-script.png)
+![Data Generation Prompt & Data Sample](screenshots/prompt-data-generation.png)
+
 
 ---
 
@@ -79,7 +80,7 @@ Write a Python script named ingest_data.py. The script must perform the followin
 
 **Outcome:** The AI generated `ingest_data.py`. Executing this script created the `compliance_data.db` file, fully populated with the project's data.
 *This stage was committed with `feat: Create script to ingest CSV data into SQLite DB`.*
-<img width="1919" height="1171" alt="final-output" src="https://github.com/user-attachments/assets/8123dbc8-411f-411e-ab9b-e148b980dafd" />
+![Ingestion Script Prompt & Generated Code](screenshots/prompt-ingestion-script.png)
 
 
 ---
@@ -111,8 +112,15 @@ Also, provide the full Python script using the `sqlite3` and `pandas` libraries 
 
 **Outcome:** The AI generated the `analyze_expenses.py` script. Running this script produced the final compliance report, successfully identifying all policy violations and high-risk expenditures.
 *This stage was committed with `feat: Implement expense analysis to flag violations`.*
+![Analysis Script Prompt & Generated Code](screenshots/prompt-analysis-script.png)
 
-## 4. How to Run This Project
+## 4. Final Result: The Compliance Report
+
+Executing the final script (`analyze_expenses.py`) connects to the database, runs the analysis, and produces the final, clear report of all transactions that were flagged as non-compliant or high-risk, printed directly to the terminal.
+
+![Final Analysis Output](screenshots/final-output.png)
+
+## 5. How to Run This Project
 
 1.  **Prerequisites:**
     Ensure you have Python and the pandas library installed.
