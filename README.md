@@ -140,7 +140,7 @@ Executing the final script (`analyze_expenses.py`) connects to the database, run
     python analyze_expenses.py
     ```
 
-## 5. Project File Structure
+## 6. Project File Structure
 
 *   **`departments.csv`, `employees.csv`, `merchants.csv`, `expenses.csv`, `compliance_rules.csv`**: The five raw, synthetic data files.
 *   **`ingest_data.py`**: The ETL script that reads the CSV files and populates the SQLite database.
