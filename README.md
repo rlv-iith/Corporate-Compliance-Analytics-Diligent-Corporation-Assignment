@@ -58,6 +58,7 @@ Generate at least 150 rows for expenses.csv, 30 for employees.csv, 4 for departm
 
 **Outcome:** The AI successfully generated five distinct but related CSV files, providing a solid foundation for the project.
 *This stage was committed with `feat: Add synthetic corporate compliance data (5 CSVs)`.*
+![Ingestion Script Prompt & Generated Code](screenshots/prompt-ingestion-script.png)
 
 ---
 
