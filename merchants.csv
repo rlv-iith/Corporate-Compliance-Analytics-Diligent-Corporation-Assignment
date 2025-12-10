@@ -1,0 +1,16 @@
+merchant_id,merchant_name,merchant_risk_level
+201,Uber,Low
+202,AWS,Medium
+203,Starbucks,Low
+204,Oracle,Medium
+205,Fancy Steakhouse,High
+206,Delta Airlines,Medium
+207,Marriott,Medium
+208,Zoom,Low
+209,Atlassian,Low
+210,Coursera,Low
+211,Lyft,Low
+212,United Airlines,Medium
+213,GitHub,Low
+214,Chipotle,Low
+215,Adobe,Medium

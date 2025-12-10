@@ -1,0 +1,5 @@
+rule_id,category,max_amount,description
+1,Travel,500.00,Limit for travel-related expenses per submission
+2,Software,300.00,Limit for software subscriptions or licenses
+3,Meals,120.00,Limit for client or team meals
+4,Training,400.00,Limit for training and education

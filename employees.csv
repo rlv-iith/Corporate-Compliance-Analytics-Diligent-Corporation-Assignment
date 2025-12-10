@@ -1,0 +1,31 @@
+employee_id,full_name,department_id,job_title
+101,Alicia Park,1,Sales Director
+102,Brian Chen,1,Account Executive
+103,Carmen Diaz,1,Account Manager
+104,David Patel,1,Sales Operations Analyst
+105,Evelyn Wright,1,Sales Engineer
+106,Frank Muller,2,Software Engineer
+107,Grace Kim,2,Senior Software Engineer
+108,Henry Lawson,2,DevOps Engineer
+109,Iris Nwosu,2,Data Scientist
+110,Jack O'Neill,2,QA Engineer
+111,Karen Liu,2,Product Manager
+112,Leo Martin,2,Frontend Engineer
+113,Maya Gupta,2,Backend Engineer
+114,Nathan Cole,2,Security Engineer
+115,Olivia Stein,3,HR Manager
+116,Peter Young,3,HR Generalist
+117,Queenie Adams,3,Recruiter
+118,Rachel Ford,3,HR Business Partner
+119,Samir Rao,3,L&D Specialist
+120,Tina Brooks,3,Compensation Analyst
+121,Umar Ali,4,Marketing Manager
+122,Valerie Stone,4,Content Strategist
+123,Will Carter,4,Digital Marketer
+124,Xavier Moore,4,SEO Specialist
+125,Yara Santos,4,Brand Designer
+126,Zane Harper,4,Event Coordinator
+127,Abby Flores,2,Site Reliability Engineer
+128,Blake Turner,1,Sales Development Rep
+129,Chloe Bennett,2,ML Engineer
+130,Derek Shaw,4,Marketing Analyst
